@@ -1,0 +1,124 @@
+.center{
+    text-align: center;
+}
+
+.myBackground{
+    background-color: rgb(224, 206, 36);
+}
+
+.mainheading{
+    background-color: firebrick;
+    color: white;
+}
+
+.myspacer{
+    height: 20px;
+}
+
+.navbar img{
+    height: 3em;
+}
+
+.nav-link{
+    font-size: 16px;
+}
+
+.mygray{
+    background-color: rgb(173, 166, 166);
+}
+
+.parallax {
+
+    /* Set a specific height */
+    min-height: 740px; 
+  
+    /* Create the parallax scrolling effect */
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+
+  .parallax-1 {
+    background-image: url("abo.jpg");
+  }
+
+  .parallax-2 {
+    background-image: url("intro.jpg");
+  }
+
+  .parallax-3 {
+    background-image: url("3c.jpg");
+  }
+  
+  #about, #work {
+      padding: 80px 0;
+  }
+
+  body{
+    font-family: 'Montserrat', sans-serif;
+    font-family: 'Oswald', sans-serif;
+  }
+
+h2 {
+      margin-bottom: 80px;
+      font-size: 3em;
+  }
+
+video {
+    display: block;
+    margin: auto;
+    width: 800px;
+    margin-bottom: 40px;
+    margin-top: 150px;
+
+}
+
+.col {
+    margin: 40px 0;
+} 
+
+.card-text{
+    color: white;
+}
+
+.card-title{
+    color: white;
+}
+
+h1 {
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+#topofpage {
+    margin-bottom: 60px;
+    text-align: center;
+    font-size: 24px;
+}
+
+h5 {
+    margin-bottom: 40px;
+    font-size: 1.5em;
+}
+
+h6 {
+    margin-bottom: 60px;
+    font-size: 3em;
+}
+
+.card2 {
+    margin: auto;
+}
+
+.carousel-inner {
+    display: block;
+    margin: auto;
+    width: 700px;
+}
+
+.card-textR {
+    font-size: 14pt;
+    color: white;
+}
+
