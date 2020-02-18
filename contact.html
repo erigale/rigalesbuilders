@@ -1,0 +1,130 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat|Oswald&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    
+    <link rel="stylesheet" href="stylesheet.css">
+
+    <title>Rigales Builers LLC</title>
+</head>
+
+<body class="mygray" id="topofpage">
+
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <a class="navbar-brand" href="#"><img src="RBlogo.jpg" alt=""></a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item active">
+                    <a class="nav-link" href="index.html">Back To Home Page <span class="sr-only">(current)</span></a>
+                </li>
+       
+
+            </ul>
+
+        </div>
+    </nav>
+    <div class="container">
+        <form action="https://formcarry.com/s/-Mx8kd2igip" method="POST" accept-charset="UTF-8">
+            <div class="form-row">
+                <div class="form-group col-md-6">
+                    <label for="name">Name</label>
+                    <input type="text" class="form-control" name="name" required>
+                </div>
+                <div class="form-group col-md-6">
+                    <label for="email">Email</label>
+                    <input type="email" class="form-control" name="email" required>
+                </div>
+            
+            <div class="form-group col-md-6">
+                <label for="phone">Phone</label>
+                <input type="tel" name="phone" class="form-control" required >
+            </div>
+            <div class="form-group col-md-6">
+                <label for="request">Request Type</label>
+                <select id="inputState" name="request" class="form-control" required>
+                    <option selected>Choose...</option>
+                    <option>Rentals</option>
+                    <option>AirBnb</option>
+                    <option>General Question</option>
+
+                </select>
+            </div>
+        </div>
+            
+            <button type="submit" class="btn btn-primary bg-dark">Submit Form</button>
+            </form>
+    </div>
+
+    <div class="modal bg-rgb" role="dialog" id="thankyoumodal">
+        <div class="modal-content">
+            <div class="modal-body">
+              <p>Thank you for contacting Rigales Builders</p>
+            </div>
+        </div>
+      </div>
+<br>
+ <br>
+ <br>
+ <br>
+<br>
+<a href="tel:1-562-867-5309" class="btn btn-primary bg-dark">Call Us: 562-867-5309</a>
+<a href="email:ri@gmail" class="btn btn-primary bg-dark">Email Us: riga@gmail.com</a>
+<a  href="https://www.instagram.com/rigalesbuilders/" class="btn btn-primary bg-dark">Follow Us On Instagram @rigalesbuilders</a>
+
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script
+  src="https://code.jquery.com/jquery-3.4.1.min.js"
+  integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+  crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+        integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+        crossorigin="anonymous"></script>
+    <script src="script.js"></script>
+    <script>
+      
+      $(function(){
+    $("form").submit(function(e){
+        e.preventDefault();
+        var href = $(this).attr("action");
+        $.ajax({
+            type: "POST",
+            dataType: "json",
+            url: href,
+            data: $(this).serialize(),
+            success: function(response){
+                if(response.status == "success"){
+                    $('#thankyoumodal').modal('show');
+                    setTimeout(() => {
+                        window.location.replace("index.html");
+                    }, 3000);
+                }else{
+                    alert("An error occured: " + response.message);
+                }
+            }
+        });
+    });
+});
+    </script>
+
+</body>
+
+</html>
